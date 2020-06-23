@@ -46,7 +46,6 @@ namespace LogSystem.Admin.API.Controllers
                 LoginUserDTO userDTO = await _auth.Login(loginDTO);
                 if (userDTO != null)
                 {
-
                     var claims = new List<Claim>();
                     claims.Add(new Claim(ClaimTypes.NameIdentifier, userDTO.UserId.ToString()));
                     claims.Add(new Claim(ClaimTypes.Role, userDTO.RoleName.ToString()));

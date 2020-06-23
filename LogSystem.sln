@@ -3,19 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSystem.Admin.API", "LogSystem.Admin.API\LogSystem.Admin.API.csproj", "{E5FBD3CD-E28D-4261-A908-E11B8E0738EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogSystem.BLL", "LogSystem.BLL\LogSystem.BLL.csproj", "{CE70AD26-D0F0-4B2E-A4C0-0E539DDA1CDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSystem.BLL", "LogSystem.BLL\LogSystem.BLL.csproj", "{CE70AD26-D0F0-4B2E-A4C0-0E539DDA1CDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogSystem.DAL", "LogSystem.DAL\LogSystem.DAL.csproj", "{846E1ED8-1C35-485B-A2F8-10AE3A75A2EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSystem.DAL", "LogSystem.DAL\LogSystem.DAL.csproj", "{846E1ED8-1C35-485B-A2F8-10AE3A75A2EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogSystem.DTO", "LogSystem.DTO\LogSystem.DTO.csproj", "{36FDB39D-0D51-4395-A995-57FA7784A5A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSystem.DTO", "LogSystem.DTO\LogSystem.DTO.csproj", "{36FDB39D-0D51-4395-A995-57FA7784A5A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogSystem.Core", "LogSystem.Core\LogSystem.Core.csproj", "{C3D80094-3C02-4524-9BB6-BEFEFB3863E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSystem.Core", "LogSystem.Core\LogSystem.Core.csproj", "{C3D80094-3C02-4524-9BB6-BEFEFB3863E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogSystem.Entities", "LogSystem.Entities\LogSystem.Entities.csproj", "{2179B702-AE51-4F90-85F5-85DE49027B38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSystem.Entities", "LogSystem.Entities\LogSystem.Entities.csproj", "{2179B702-AE51-4F90-85F5-85DE49027B38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogSystem.IoC", "LogSystem.IoC\LogSystem.IoC.csproj", "{6074A9EE-1418-4BCD-8EC9-B03770522177}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSystem.IoC", "LogSystem.IoC\LogSystem.IoC.csproj", "{6074A9EE-1418-4BCD-8EC9-B03770522177}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogSystem.UnitTesting", "LogSystem.UnitTesting\LogSystem.UnitTesting.csproj", "{DC5D59C1-CB11-4A62-8035-EFC09BF8FB13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogSystem.Admin.API", "LogSystem.Admin.API\LogSystem.Admin.API.csproj", "{9F8BB9F0-C1CC-4425-9D29-C87D14EB0CBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSystem.IntegrationTesting", "LogSystem.IntegrationTesting\LogSystem.IntegrationTesting.csproj", "{54168060-9C97-4B4C-B0A8-D10D3122EDEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E5FBD3CD-E28D-4261-A908-E11B8E0738EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5FBD3CD-E28D-4261-A908-E11B8E0738EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5FBD3CD-E28D-4261-A908-E11B8E0738EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5FBD3CD-E28D-4261-A908-E11B8E0738EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CE70AD26-D0F0-4B2E-A4C0-0E539DDA1CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CE70AD26-D0F0-4B2E-A4C0-0E539DDA1CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE70AD26-D0F0-4B2E-A4C0-0E539DDA1CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +51,18 @@ Global
 		{6074A9EE-1418-4BCD-8EC9-B03770522177}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6074A9EE-1418-4BCD-8EC9-B03770522177}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6074A9EE-1418-4BCD-8EC9-B03770522177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC5D59C1-CB11-4A62-8035-EFC09BF8FB13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC5D59C1-CB11-4A62-8035-EFC09BF8FB13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC5D59C1-CB11-4A62-8035-EFC09BF8FB13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC5D59C1-CB11-4A62-8035-EFC09BF8FB13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F8BB9F0-C1CC-4425-9D29-C87D14EB0CBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F8BB9F0-C1CC-4425-9D29-C87D14EB0CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F8BB9F0-C1CC-4425-9D29-C87D14EB0CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F8BB9F0-C1CC-4425-9D29-C87D14EB0CBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54168060-9C97-4B4C-B0A8-D10D3122EDEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54168060-9C97-4B4C-B0A8-D10D3122EDEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54168060-9C97-4B4C-B0A8-D10D3122EDEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54168060-9C97-4B4C-B0A8-D10D3122EDEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
