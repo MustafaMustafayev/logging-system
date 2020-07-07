@@ -21,7 +21,12 @@ using LogSystem.DTO.AdminDTO.CompanyServiceDTO;
 using LogSystem.DTO.AdminDTO.ServiceRepoDTO;
 using LogSystem.DTO.AdminDTO.UserRepoDTO;
 using LogSystem.Entities;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -31,7 +36,13 @@ namespace LogSystem.IoC.AdminIoC
 {
     public class DependencyContainer
     {
-        public static void RegisterServices(IServiceCollection services)
+        public DependencyContainer(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        private readonly IConfiguration Configuration;
+        public void RegisterServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(AdminAutoMapperProfile));
 
@@ -57,6 +68,53 @@ namespace LogSystem.IoC.AdminIoC
             services.AddScoped<ILogDAL, LogDAL>();
 
             services.AddScoped<IUtil, Util>();
+
+            services.AddDbContext<LogContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("LogDB"));
+            });
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = false,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("JWTSettings:SecretKey").Value)),
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    });
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "LogSystemAPI", Version = "v1" });
+
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "JWT Authorization header using the Bearer scheme."
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                          new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "Bearer"
+                                }
+                            },
+                            new string[] {}
+                    }
+                });
+            });
 
             services.AddControllers()
             .AddFluentValidation(opt =>
