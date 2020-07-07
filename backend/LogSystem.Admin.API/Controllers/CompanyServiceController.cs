@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using LogSystem.BLL.AdminBLL.CompanyServiceRepoBLL;
 using LogSystem.Core.Utility;
 using LogSystem.DTO.AdminDTO.CompanyServiceDTO;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LogSystem.Admin.API.Controllers

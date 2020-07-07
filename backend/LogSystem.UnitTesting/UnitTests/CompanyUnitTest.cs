@@ -1,13 +1,10 @@
 ﻿using LogSystem.Admin.API.Controllers;
 using LogSystem.BLL.AdminBLL.CompanyRepoBLL;
 using LogSystem.DTO.AdminDTO.CompanyRepoDTO;
-using LogSystem.DTO.AdminDTO.ServiceRepoDTO;
 using LogSystem.UnitTesting.MemberData;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 

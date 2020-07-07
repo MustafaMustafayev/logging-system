@@ -1,7 +1,4 @@
 ﻿using LogSystem.DTO.AdminDTO.ServiceRepoDTO;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LogSystem.DTO.AdminDTO.CompanyServiceDTO
 {

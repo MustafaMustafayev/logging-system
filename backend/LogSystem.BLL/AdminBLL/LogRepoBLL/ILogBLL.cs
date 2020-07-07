@@ -1,7 +1,5 @@
 ﻿using LogSystem.DTO.AdminDTO.LogRepoDTO;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace LogSystem.BLL.AdminBLL.LogRepoBLL

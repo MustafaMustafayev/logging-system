@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using LogSystem.Core.Utility;
-using Microsoft.AspNetCore.Http;
+﻿using LogSystem.Core.Utility;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LogSystem.Admin.API.Controllers

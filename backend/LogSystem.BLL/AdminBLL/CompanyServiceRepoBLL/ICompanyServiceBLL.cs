@@ -1,8 +1,5 @@
 ﻿using LogSystem.DTO.AdminDTO.CompanyServiceDTO;
-using LogSystem.DTO.AdminDTO.ServiceRepoDTO;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace LogSystem.BLL.AdminBLL.CompanyServiceRepoBLL

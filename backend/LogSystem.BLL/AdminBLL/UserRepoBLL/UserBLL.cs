@@ -5,7 +5,6 @@ using LogSystem.DTO.AdminDTO.UserRepoDTO;
 using LogSystem.Entities;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace LogSystem.BLL.AdminBLL.UserRepoBLL

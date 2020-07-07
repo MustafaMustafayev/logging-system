@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace LogSystem.DTO.AdminDTO.CompanyRepoDTO
 {
     public class CompanyFilterDTO
